@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réparation Pro Nord | Fours, Laveuses & Sécheuses à Domicile</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0F52BA',
+                            darkblue: '#0A367C',
+                            orange: '#FF5722',
+                            orangehover: '#E64A19',
+                            lightbg: '#F8FAFC',
+                            darknavy: '#0F172A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-hero {
+            background: linear-gradient(135deg, #0A367C 0%, #0F52BA 60%, #1E293B 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .custom-shadow {
+            box-shadow: 0 10px 30px -5px rgba(15, 82, 186, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-brand-lightbg text-slate-800 font-sans antialiased selection:bg-brand-orange selection:text-white pb-20 md:pb-0">
+
+    <!-- BARRE D'ANNONCE SUPERIEURE -->
+    <div class="bg-brand-darknavy text-white text-xs md:text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center space-x-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="font-medium">Techniciens disponibles aujourd'hui — De Repentigny à Laval & St-Jérôme</span>
+            </div>
+            <div class="flex items-center space-x-6 text-slate-300">
+                <span class="hidden sm:inline"><i class="fa-solid fa-shield-halved text-brand-orange mr-1"></i> Service à domicile transparent</span>
+                <a href="mailto:n3d3l3d3n@proton.me" class="hover:text-white transition"><i class="fa-solid fa-envelope mr-1 text-brand-orange"></i> n3d3l3d3n@proton.me</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION PRINCIPALE -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-12 h-12 bg-brand-blue rounded-xl flex items-center justify-center text-white shadow-md group-hover:bg-brand-darkblue transition">
+                    <i class="fa-solid fa-wrench text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-black tracking-tight text-slate-900 block leading-tight">RÉPARATION PRO<span class="text-brand-orange">NORD</span></span>
+                    <span class="text-xs text-slate-500 font-medium tracking-wide">ÉLECTROMÉNAGERS À DOMICILE</span>
+                </div>
+            </a>
+
+            <!-- Liens PC -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-slate-600 text-sm">
+                <a href="#services" class="hover:text-brand-blue transition">Services</a>
+                <a href="#tarifs" class="hover:text-brand-blue transition font-semibold text-brand-blue">Tarifs & Calculateur</a>
+                <a href="#zones" class="hover:text-brand-blue transition">Zones Couvertes</a>
+                <a href="#soumission" class="hover:text-brand-blue transition">Prendre RDV</a>
+                <a href="#faq" class="hover:text-brand-blue transition">FAQ</a>
+            </nav>
+
+            <!-- Bouton d'appel rapide -->
+            <div class="hidden sm:flex items-center space-x-3">
+                <a href="tel:+14389855821" class="flex items-center space-x-3 bg-brand-orange hover:bg-brand-orangehover text-white px-5 py-3 rounded-xl font-bold shadow-lg shadow-orange-500/20 transition transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+1 438-985-5821</span>
+                </a>
+            </div>
+
+            <!-- Bouton Menu Mobile -->
+            <button id="menu-btn" class="md:hidden text-slate-700 hover:text-brand-blue p-2 text-2xl focus:outline-none" aria-label="Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menu Déroulant Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#services" class="block py-2 text-slate-700 font-medium hover:text-brand-blue">Services</a>
+            <a href="#tarifs" class="block py-2 text-brand-blue font-bold">Tarifs & Calculateur</a>
+            <a href="#zones" class="block py-2 text-slate-700 font-medium hover:text-brand-blue">Zones Couvertes</a>
+            <a href="#soumission" class="block py-2 text-slate-700 font-medium hover:text-brand-blue">Prendre RDV</a>
+            <a href="#faq" class="block py-2 text-slate-700 font-medium hover:text-brand-blue">FAQ</a>
+            <a href="tel:+14389855821" class="block text-center bg-brand-orange text-white py-3 rounded-xl font-bold shadow mt-4">
+                <i class="fa-solid fa-phone mr-2"></i> Appeler +1 438-985-5821
+            </a>
+        </div>
+    </header>
+
+    <!-- SECTION HERO (EN-TÊTE) -->
+    <section class="gradient-hero text-white relative overflow-hidden pt-12 pb-20 md:py-24">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Texte d'accroche -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 text-sm font-medium text-orange-300">
+                        <i class="fa-solid fa-location-dot text-brand-orange"></i>
+                        <span>Repentigny • Terrebonne • Laval • St-Jérôme</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
+                        Réparation de Fours, Laveuses & Sécheuses <span class="text-orange-400">à Domicile</span>
+                    </h1>
+
+                    <p class="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto lg:mx-0 font-normal">
+                        Service rapide, professionnel et courtois sur toute la Rive-Nord. Pas besoin de déplacer vos appareils : nous intervenons directement chez vous !
+                    </p>
+
+                    <!-- Avantages clés -->
+                    <div class="pt-2 grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-lg mx-auto lg:mx-0 text-xs sm:text-sm font-medium text-slate-200">
+                        <div class="flex items-center space-x-2 bg-white/5 p-2.5 rounded-lg border border-white/10">
+                            <i class="fa-solid fa-clock text-brand-orange text-base"></i>
+                            <span>65 $/h (1h min.)</span>
+                        </div>
+                        <div class="flex items-center space-x-2 bg-white/5 p-2.5 rounded-lg border border-white/10">
+                            <i class="fa-solid fa-boxes-packing text-emerald-400 text-base"></i>
+                            <span>Pièces + 10 %</span>
+                        </div>
+                        <div class="flex items-center space-x-2 bg-white/5 p-2.5 rounded-lg border border-white/10 col-span-2 sm:col-span-1">
+                            <i class="fa-solid fa-house-user text-amber-400 text-base"></i>
+                            <span>Service 100% Mobile</span>
+                        </div>
+                    </div>
+
+                    <!-- Boutons CTA -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="tel:+14389855821" class="w-full sm:w-auto bg-brand-orange hover:bg-brand-orangehover text-white text-lg font-bold px-8 py-4 rounded-xl shadow-xl shadow-orange-600/30 text-center transition transform hover:-translate-y-1 flex items-center justify-center space-x-3">
+                            <i class="fa-solid fa-phone text-xl"></i>
+                            <span>Appeler : 438-985-5821</span>
+                        </a>
+                        <a href="#soumission" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border border-white/30 text-lg font-semibold px-8 py-4 rounded-xl text-center backdrop-blur-sm transition">
+                            Demander un Rendez-vous
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Carte Résumé Tarifs dans le Hero -->
+                <div class="lg:col-span-5">
+                    <div class="glass-card rounded-2xl p-6 sm:p-8 text-slate-800 shadow-2xl border border-white/20">
+                        <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center border-b pb-3">
+                            <i class="fa-solid fa-receipt text-brand-blue mr-3 text-2xl"></i>
+                            Aperçu de la Tarification
+                        </h3>
+
+                        <div class="space-y-4 mb-6 text-sm">
+                            <div class="flex justify-between items-center bg-slate-50 p-3 rounded-xl border border-slate-100">
+                                <div>
+                                    <span class="font-bold text-slate-900 block">Taux horaire</span>
+                                    <span class="text-xs text-slate-500">Main-d'œuvre qualifiée</span>
+                                </div>
+                                <span class="font-black text-brand-blue text-lg">65 $ / h</span>
+                            </div>
+
+                            <div class="flex justify-between items-center bg-slate-50 p-3 rounded-xl border border-slate-100">
+                                <div>
+                                    <span class="font-bold text-slate-900 block">Premier Rendez-vous</span>
+                                    <span class="text-xs text-slate-500">Déplacement & diagnostic inclus</span>
+                                </div>
+                                <span class="font-black text-slate-900 text-sm">1h min. (65 $)</span>
+                            </div>
+
+                            <div class="flex justify-between items-center bg-slate-50 p-3 rounded-xl border border-slate-100">
+                                <div>
+                                    <span class="font-bold text-slate-900 block">Pièces de rechange</span>
+                                    <span class="text-xs text-slate-500">Prix coûtant + gestion</span>
+                                </div>
+                                <span class="font-black text-slate-900 text-sm">Pièce + 10 %</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-amber-50 border border-amber-200 rounded-xl p-3.5 text-xs text-amber-900 flex items-start space-x-2.5">
+                            <i class="fa-solid fa-circle-info text-amber-600 text-base mt-0.5"></i>
+                            <div>
+                                <strong>Condition de paiement :</strong> Payable dès la première visite physique à votre domicile.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION SERVICES -->
+    <section id="services" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-orange font-bold uppercase tracking-wider text-xs sm:text-sm">Spécialiste Électroménagers</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Nos Services de Réparation à Domicile</h2>
+                <p class="text-slate-600 mt-4 text-base sm:text-lg">
+                    Intervention sur toutes marques majeures (Whirlpool, Maytag, Samsung, LG, GE, Frigidaire, Bosch, etc.).
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- FOURS & CUISINIÈRES -->
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-slate-100 overflow-hidden flex flex-col group">
+                    <div class="bg-gradient-to-r from-amber-500 to-orange-600 h-3"></div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <div class="w-16 h-16 bg-orange-100 text-brand-orange rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition duration-300">
+                            <i class="fa-solid fa-fire-burner"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Four & Cuisinière</h3>
+                        <p class="text-slate-600 text-sm mb-6">
+                            Fours encastrés, cuisinières vitrocéramiques ou traditionnelles. Diagnostic rapide et réparation sécurisée.
+                        </p>
+                        
+                        <div class="border-t border-slate-100 pt-4 mt-auto">
+                            <h4 class="text-xs font-bold uppercase text-slate-400 tracking-wider mb-3">Pannes fréquentes :</h4>
+                            <ul class="space-y-2 text-sm text-slate-700">
+                                <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i> Four qui ne chauffe plus</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i> Élément cuiseur ou grill brûlé</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i> Codes d'erreurs électroniques</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i> Problème de verrouillage de porte</li>
+                            </ul>
+                        </div>
+
+                        <a href="#soumission" onclick="selectAppliance('Four / Cuisinière')" class="mt-6 block text-center bg-slate-100 hover:bg-brand-blue hover:text-white font-semibold py-3 rounded-xl transition text-sm text-slate-700">
+                            Réparer mon four
+                        </a>
+                    </div>
+                </div>
+
+                <!-- LAVEUSES -->
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-slate-100 overflow-hidden flex flex-col group">
+                    <div class="bg-gradient-to-r from-blue-500 to-indigo-600 h-3"></div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <div class="w-16 h-16 bg-blue-100 text-brand-blue rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition duration-300">
+                            <i class="fa-solid fa-soap"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Laveuse</h3>
+                        <p class="text-slate-600 text-sm mb-6">
+                            Réparation de laveuses chargement frontal ou vertical. Ne laissez pas l'eau stagnante gâcher votre journée.
+                        </p>
+
+                        <div class="border-t border-slate-100 pt-4 mt-auto">
+                            <h4 class="text-xs font-bold uppercase text-slate-400 tracking-wider mb-3">Pannes fréquentes :</h4>
+                            <ul class="space-y-2 text-sm text-slate-700">
+                                <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i> Laveuse qui ne vidange pas</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i> Problème d'essorage (linge trempé)</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i> Bruits anormaux ou fortes vibrations</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i> Fuites d'eau sous l'appareil</li>
+                            </ul>
+                        </div>
+
+                        <a href="#soumission" onclick="selectAppliance('Laveuse')" class="mt-6 block text-center bg-slate-100 hover:bg-brand-blue hover:text-white font-semibold py-3 rounded-xl transition text-sm text-slate-700">
+                            Réparer ma laveuse
+                        </a>
+                    </div>
+                </div>
+
+                <!-- SÉCHEUSES -->
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-slate-100 overflow-hidden flex flex-col group">
+                    <div class="bg-gradient-to-r from-rose-500 to-red-600 h-3"></div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <div class="w-16 h-16 bg-red-100 text-rose-600 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition duration-300">
+                            <i class="fa-solid fa-wind"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Sécheuse</h3>
+                        <p class="text-slate-600 text-sm mb-6">
+                            Remise en service rapide et sécuritaire de votre sécheuse pour éviter les risques de surchauffe.
+                        </p>
+
+                        <div class="border-t border-slate-100 pt-4 mt-auto">
+                            <h4 class="text-xs font-bold uppercase text-slate-400 tracking-wider mb-3">Pannes fréquentes :</h4>
+                            <ul class="space-y-2 text-sm text-slate-700">
+                                <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i> Sécheuse tourne mais ne chauffe pas</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i> Courroie cassée ou tambour bloqué</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i> Grincements ou bruits de frottement</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i> Ne démarre pas du tout</li>
+                            </ul>
+                        </div>
+
+                        <a href="#soumission" onclick="selectAppliance('Sécheuse')" class="mt-6 block text-center bg-slate-100 hover:bg-brand-blue hover:text-white font-semibold py-3 rounded-xl transition text-sm text-slate-700">
+                            Réparer ma sécheuse
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION TARIFS & CALCULATEUR INTERACTIF -->
+    <section id="tarifs" class="py-20 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-orange font-bold uppercase tracking-wider text-xs sm:text-sm">Transparence Totale</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Tarification & Estimation des Coûts</h2>
+                <p class="text-slate-600 mt-4 text-base sm:text-lg">
+                    Aucun frais caché. Tous nos prix sont clairs et explicités avant le début des travaux.
+                </p>
+            </div>
+
+            <!-- REGLES DE TARIFICATION -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-brand-lightbg rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <div class="w-12 h-12 bg-brand-blue/10 text-brand-blue rounded-xl flex items-center justify-center text-xl font-bold mb-4">
+                        01
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Premier Rendez-vous</h3>
+                    <p class="text-2xl font-black text-brand-blue mb-4">65 $ <span class="text-xs font-normal text-slate-500">(1 heure minimum)</span></p>
+                    <p class="text-sm text-slate-600">
+                        Comprend le déplacement à votre domicile, le diagnostic initial de la panne et la première heure de travail.
+                    </p>
+                </div>
+
+                <div class="bg-brand-lightbg rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <div class="w-12 h-12 bg-brand-orange/10 text-brand-orange rounded-xl flex items-center justify-center text-xl font-bold mb-4">
+                        02
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Taux Horaire</h3>
+                    <p class="text-2xl font-black text-brand-orange mb-4">65 $ / heure</p>
+                    <p class="text-sm text-slate-600">
+                        Si du temps additionnel est nécessaire au-delà de la première heure, le tarif reste fixe à 65 $/h pour le temps requis.
+                    </p>
+                </div>
+
+                <div class="bg-brand-lightbg rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-600 rounded-xl flex items-center justify-center text-xl font-bold mb-4">
+                        03
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Pièces de Rechange</h3>
+                    <p class="text-2xl font-black text-emerald-600 mb-4">Prix Pièce + 10 %</p>
+                    <p class="text-sm text-slate-600">
+                        Les pièces certifiées sont facturées au coût réel plus 10 % pour couvrir les frais de recherche et de livraison.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CALCULATEUR ET EXEMPLES -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Exemples concréts -->
+                <div class="lg:col-span-7 bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center">
+                        <i class="fa-solid fa-calculator text-brand-blue mr-3"></i>
+                        Exemples de facturation courante
+                    </h3>
+
+                    <div class="space-y-4">
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                            <div class="flex justify-between items-start mb-1">
+                                <h4 class="font-bold text-slate-900 text-sm">Diagnostic / Réparation simple (sans pièce)</h4>
+                                <span class="bg-blue-100 text-brand-blue font-bold text-xs px-2.5 py-1 rounded-full">65 $</span>
+                            </div>
+                            <p class="text-xs text-slate-600">
+                                Réparation effectuée durant la première heure (ex: déblocage pompe, ajustement de porte, réinitialisation).
+                            </p>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                            <div class="flex justify-between items-start mb-1">
+                                <h4 class="font-bold text-slate-900 text-sm">Remplacement d'élément chauffant (Four / Sécheuse)</h4>
+                                <span class="bg-blue-100 text-brand-blue font-bold text-xs px-2.5 py-1 rounded-full">~ 142 $</span>
+                            </div>
+                            <p class="text-xs text-slate-600">
+                                1h de travail (65 $) + Élément chauffant (70 $) + Marge 10% (7 $) = 142 $
+                            </p>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                            <div class="flex justify-between items-start mb-1">
+                                <h4 class="font-bold text-slate-900 text-sm">Changement de pompe de laveuse (2 heures de travail)</h4>
+                                <span class="bg-blue-100 text-brand-blue font-bold text-xs px-2.5 py-1 rounded-full">~ 240 $</span>
+                            </div>
+                            <p class="text-xs text-slate-600">
+                                2h de travail (130 $) + Pompe (100 $) + Marge 10% (10 $) = 240 $
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simulateur interactif -->
+                <div class="lg:col-span-5 bg-gradient-to-br from-brand-darknavy to-slate-900 rounded-2xl p-6 sm:p-8 text-white shadow-xl">
+                    <h3 class="text-xl font-bold mb-2 flex items-center">
+                        <i class="fa-solid fa-sliders text-brand-orange mr-3"></i>
+                        Simulateur d'estimation
+                    </h3>
+                    <p class="text-xs text-slate-300 mb-6">
+                        Ajustez les curseurs ci-dessous pour calculer votre estimation :
+                    </p>
+
+                    <div class="space-y-5">
+                        <!-- Temps estimé -->
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold mb-2">
+                                <span>Durée du rendez-vous :</span>
+                                <span id="calc-hours-val" class="text-brand-orange font-bold">1 heure (minimum)</span>
+                            </div>
+                            <input type="range" id="calc-hours" min="1" max="4" step="0.5" value="1" oninput="updateCalculation()" class="w-full accent-brand-orange cursor-pointer">
+                        </div>
+
+                        <!-- Prix pièce -->
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">
+                                Coût approximatif de la pièce ($) :
+                            </label>
+                            <input type="number" id="calc-part" value="0" min="0" step="5" oninput="updateCalculation()" placeholder="Ex: 60" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-brand-orange text-sm">
+                        </div>
+
+                        <!-- Décomposition -->
+                        <div class="bg-white/10 rounded-xl p-4 border border-white/10 space-y-2 text-xs">
+                            <div class="flex justify-between text-slate-300">
+                                <span>Main-d'œuvre (<span id="out-hours-text">1h</span> à 65$/h) :</span>
+                                <span id="out-labor" class="font-bold text-white">65,00 $</span>
+                            </div>
+                            <div class="flex justify-between text-slate-300">
+                                <span>Pièce (<span id="out-part-base">0 $</span>) + 10 % gestion :</span>
+                                <span id="out-part-total" class="font-bold text-white">0,00 $</span>
+                            </div>
+                            <div class="border-t border-white/20 pt-2 mt-2 flex justify-between items-center text-sm font-extrabold text-white">
+                                <span>Total Estimé :</span>
+                                <span id="out-grand-total" class="text-2xl text-orange-400">65,00 $</span>
+                            </div>
+                        </div>
+
+                        <a href="#soumission" class="block text-center bg-brand-orange hover:bg-brand-orangehover text-white font-bold py-3.5 rounded-xl transition shadow-lg text-sm">
+                            Prendre RDV avec cette estimation
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION ZONES DE COUVERTURE -->
+    <section id="zones" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-brand-orange font-bold uppercase tracking-wider text-xs sm:text-sm">Territoire Desserbi</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">De Repentigny à St-Jérôme & Laval</h2>
+                    <p class="text-slate-600">
+                        Notre unité mobile sillonne la Rive-Nord de Montréal et les Laurentides. Nous arrivons directement équipés à votre domicile.
+                    </p>
+
+                    <!-- Vérificateur de ville -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                        <label for="city-search" class="block font-bold text-slate-800 mb-2 text-sm">
+                            <i class="fa-solid fa-magnifying-glass text-brand-blue mr-1"></i> Vérifiez votre municipalité :
+                        </label>
+                        <div class="flex gap-2">
+                            <input type="text" id="city-search" placeholder="Ex: Mascouche, Laval, Saint-Eustache..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-blue text-sm">
+                            <button onclick="checkCity()" class="bg-brand-blue hover:bg-brand-darkblue text-white px-5 py-3 rounded-xl font-semibold text-sm transition">
+                                Vérifier
+                            </button>
+                        </div>
+                        <div id="city-result" class="mt-3 text-sm hidden"></div>
+                    </div>
+                </div>
+
+                <!-- Grille des villes -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                        <h3 class="text-lg font-bold text-slate-900 mb-6 flex items-center">
+                            <i class="fa-solid fa-map-location-dot text-brand-orange mr-3 text-xl"></i>
+                            Principales municipalités desservies :
+                        </h3>
+
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 flex items-center space-x-2">
+                                <i class="fa-solid fa-check-circle text-brand-blue text-xs"></i>
+                                <span class="font-medium text-slate-700 text-sm">Repentigny</span>
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 flex items-center space-x-2">
+                                <i class="fa-solid fa-check-circle text-brand-blue text-xs"></i>
+                                <span class="font-medium text-slate-700 text-sm">Laval</span>
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 flex items-center space-x-2">
+                                <i class="fa-solid fa-check-circle text-brand-blue text-xs"></i>
+                                <span class="font-medium text-slate-700 text-sm">Saint-Jérôme</span>
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 flex items-center space-x-2">
+                                <i class="fa-solid fa-check-circle text-brand-blue text-xs"></i>
+                                <span class="font-medium text-slate-700 text-sm">Terrebonne</span>
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 flex items-center space-x-2">
+                                <i class="fa-solid fa-check-circle text-brand-blue text-xs"></i>
+                                <span class="font-medium text-slate-700 text-sm">Mascouche</span>
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 flex items-center space-x-2">
+                                <i class="fa-solid fa-check-circle text-brand-blue text-xs"></i>
+                                <span class="font-medium text-slate-700 text-sm">Blainville</span>
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 flex items-center space-x-2">
+                                <i class="fa-solid fa-check-circle text-brand-blue text-xs"></i>
+                                <span class="font-medium text-slate-700 text-sm">Mirabel</span>
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 flex items-center space-x-2">
+                                <i class="fa-solid fa-check-circle text-brand-blue text-xs"></i>
+                                <span class="font-medium text-slate-700 text-sm">Sainte-Thérèse</span>
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 flex items-center space-x-2">
+                                <i class="fa-solid fa-check-circle text-brand-blue text-xs"></i>
+                                <span class="font-medium text-slate-700 text-sm">Rosemère</span>
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 flex items-center space-x-2">
+                                <i class="fa-solid fa-check-circle text-brand-blue text-xs"></i>
+                                <span class="font-medium text-slate-700 text-sm">Boisbriand</span>
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 flex items-center space-x-2">
+                                <i class="fa-solid fa-check-circle text-brand-blue text-xs"></i>
+                                <span class="font-medium text-slate-700 text-sm">Saint-Eustache</span>
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 flex items-center space-x-2">
+                                <i class="fa-solid fa-check-circle text-brand-blue text-xs"></i>
+                                <span class="font-medium text-slate-700 text-sm">L'Assomption</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULAIRE DE PRISE DE RENDEZ-VOUS -->
+    <section id="soumission" class="py-20 bg-slate-900 text-white relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <span class="text-brand-orange font-bold uppercase tracking-wider text-xs sm:text-sm">Prise de RDV Rapide</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-2">Demande d'intervention à domicile</h2>
+                <p class="text-slate-300 mt-2 text-sm sm:text-base">
+                    Complétez le formulaire ci-dessous. Nous vous contacterons rapidement pour valider la plage horaire.
+                </p>
+            </div>
+
+            <form id="booking-form" onsubmit="handleFormSubmit(event)" class="bg-slate-800/90 border border-slate-700 p-6 sm:p-10 rounded-3xl shadow-2xl space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Nom -->
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-slate-200">Nom complet *</label>
+                        <input type="text" id="form-name" required placeholder="Votre nom" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-blue text-sm">
+                    </div>
+
+                    <!-- Téléphone -->
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-slate-200">Numéro de téléphone *</label>
+                        <input type="tel" id="form-phone" required placeholder="(438) 985-5821" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-blue text-sm">
+                    </div>
+
+                    <!-- Courriel -->
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-slate-200">Adresse courriel</label>
+                        <input type="email" id="form-email" placeholder="votre@courriel.com" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-blue text-sm">
+                    </div>
+
+                    <!-- Ville -->
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-slate-200">Ville / Municipalité *</label>
+                        <input type="text" id="form-city" required placeholder="Ex: Repentigny, Laval, St-Jérôme..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-blue text-sm">
+                    </div>
+
+                    <!-- Appareil -->
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-slate-200">Type d'appareil *</label>
+                        <select id="form-appliance" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-blue text-sm">
+                            <option value="">Sélectionnez un appareil</option>
+                            <option value="Four / Cuisinière">Four / Cuisinière</option>
+                            <option value="Laveuse">Laveuse</option>
+                            <option value="Sécheuse">Sécheuse</option>
+                            <option value="Plusieurs appareils">Plusieurs appareils</option>
+                        </select>
+                    </div>
+
+                    <!-- Marque de l'appareil -->
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-slate-200">Marque de l'appareil</label>
+                        <input type="text" id="form-brand" placeholder="Ex: Samsung, Whirlpool, LG..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-blue text-sm">
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <label class="block text-sm font-semibold mb-2 text-slate-200">Description du problème *</label>
+                    <textarea id="form-desc" rows="3" required placeholder="Décrivez brièvement la panne..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-blue text-sm"></textarea>
+                </div>
+
+                <!-- Bouton d'envoi -->
+                <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orangehover text-white font-bold py-4 rounded-xl shadow-lg transition duration-200 text-base flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Envoyer la demande d'intervention</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- SECTION FAQ -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-brand-orange font-bold uppercase tracking-wider text-xs sm:text-sm">Questions Fréquentes</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Réponses à vos questions</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="border border-slate-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(1)" class="w-full text-left p-5 font-bold text-slate-800 bg-slate-50 hover:bg-slate-100 flex justify-between items-center transition">
+                        <span>Pourquoi facturez-vous un minimum de 1 heure au premier rendez-vous ?</span>
+                        <i id="faq-icon-1" class="fa-solid fa-chevron-down text-brand-blue transition-transform"></i>
+                    </button>
+                    <div id="faq-ans-1" class="hidden p-5 text-slate-600 text-sm border-t border-slate-200 bg-white">
+                        La première heure (65 $) couvre les frais de déplacement jusqu'à votre domicile, la prise en charge initiale ainsi que le premier diagnostic complet de l'appareil.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(2)" class="w-full text-left p-5 font-bold text-slate-800 bg-slate-50 hover:bg-slate-100 flex justify-between items-center transition">
+                        <span>Comment sont calculés les prix des pièces ?</span>
+                        <i id="faq-icon-2" class="fa-solid fa-chevron-down text-brand-blue transition-transform"></i>
+                    </button>
+                    <div id="faq-ans-2" class="hidden p-5 text-slate-600 text-sm border-t border-slate-200 bg-white">
+                        Toutes les pièces de rechange d'origine sont facturées au coût net du fournisseur plus une faible majoration de 10 % pour couvrir la commande et la livraison.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(3)" class="w-full text-left p-5 font-bold text-slate-800 bg-slate-50 hover:bg-slate-100 flex justify-between items-center transition">
+                        <span>Avez-vous une adresse physique où déposer un appareil ?</span>
+                        <i id="faq-icon-3" class="fa-solid fa-chevron-down text-brand-blue transition-transform"></i>
+                    </button>
+                    <div id="faq-ans-3" class="hidden p-5 text-slate-600 text-sm border-t border-slate-200 bg-white">
+                        Non, nous offrons un service <strong>100% à domicile</strong>. Nous nous déplaçons chez vous avec l'outillage nécessaire.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIED DE PAGE (FOOTER) -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                
+                <div class="space-y-4">
+                    <span class="text-xl font-black text-white">RÉPARATION PRO<span class="text-brand-orange">NORD</span></span>
+                    <p class="text-xs text-slate-400">
+                        Service professionnel de réparation de fours, laveuses et sécheuses à domicile de Repentigny à St-Jérôme et Laval.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Contact Direct</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li>
+                            <a href="tel:+14389855821" class="hover:text-white transition flex items-center space-x-2">
+                                <i class="fa-solid fa-phone text-brand-orange"></i>
+                                <span>+1 438-985-5821</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:n3d3l3d3n@proton.me" class="hover:text-white transition flex items-center space-x-2">
+                                <i class="fa-solid fa-envelope text-brand-orange"></i>
+                                <span>n3d3l3d3n@proton.me</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Avis de Tarifs</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li>• Taux horaire : 65 $ / heure</li>
+                        <li>• Minimum 1h au 1er rendez-vous</li>
+                        <li>• Pièces : Prix coûtant + 10 %</li>
+                        <li>• Payable dès la première visite physique</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 text-center text-xs text-slate-500">
+                <p>&copy; 2026 Réparation Pro Nord. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOUTON FLOTTANT MOBILE -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-slate-200 p-3 z-50 md:hidden flex items-center justify-between shadow-2xl">
+        <div class="pl-2">
+            <span class="block text-xs font-bold text-slate-900">Besoin d'un technicien ?</span>
+            <span class="block text-xs text-brand-blue font-extrabold">+1 438-985-5821</span>
+        </div>
+        <a href="tel:+14389855821" class="bg-brand-orange hover:bg-brand-orangehover text-white px-5 py-2.5 rounded-xl font-bold text-sm flex items-center space-x-2 shadow-lg">
+            <i class="fa-solid fa-phone"></i>
+            <span>Appeler</span>
+        </a>
+    </div>
+
+    <!-- MODAL DE CONFIRMATION -->
+    <div id="modal-overlay" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 text-center shadow-2xl">
+            <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">Demande envoyée !</h3>
+            <p class="text-slate-600 text-sm mb-6" id="modal-message">
+                Merci ! Nous avons bien reçu votre demande d'intervention.
+            </p>
+            <button onclick="closeModal()" class="w-full bg-brand-blue hover:bg-brand-darkblue text-white font-bold py-3 rounded-xl transition">
+                Fermer
+            </button>
+        </div>
+    </div>
+
+    <!-- LOGIQUE JAVASCRIPT -->
+    <script>
+        // Toggle mobile menu
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+        // Sélection automatique de l'appareil depuis les cartes
+        function selectAppliance(type) {
+            const selectElement = document.getElementById('form-appliance');
+            if (selectElement) selectElement.value = type;
+        }
+
+        // Calculateur interactif
+        function updateCalculation() {
+            const hours = parseFloat(document.getElementById('calc-hours').value);
+            const partBase = parseFloat(document.getElementById('calc-part').value) || 0;
+
+            const laborTotal = hours * 65;
+            const partManagement = partBase * 0.10;
+            const partTotal = partBase + partManagement;
+            const grandTotal = laborTotal + partTotal;
+
+            document.getElementById('calc-hours-val').innerText = `${hours} heure${hours > 1 ? 's' : ''} ${hours === 1 ? '(minimum)' : ''}`;
+            document.getElementById('out-hours-text').innerText = `${hours}h`;
+            document.getElementById('out-labor').innerText = `${laborTotal.toFixed(2)} $`;
+            document.getElementById('out-part-base').innerText = `${partBase.toFixed(2)} $`;
+            document.getElementById('out-part-total').innerText = `${partTotal.toFixed(2)} $`;
+            document.getElementById('out-grand-total').innerText = `${grandTotal.toFixed(2)} $`;
+        }
+
+        // Recherche de ville
+        function checkCity() {
+            const input = document.getElementById('city-search').value.trim().toLowerCase();
+            const resultDiv = document.getElementById('city-result');
+            const validCities = ['repentigny', 'laval', 'saint-jérôme', 'saint jerome', 'st-jérôme', 'terrebonne', 'mascouche', 'blainville', 'mirabel', 'sainte-thérèse', 'rosemère', 'boisbriand', 'saint-eustache', 'l\'assomption'];
+
+            resultDiv.classList.remove('hidden');
+            if (input === "") {
+                resultDiv.className = "mt-3 text-sm text-amber-600";
+                resultDiv.innerHTML = "Veuillez entrer le nom de votre ville.";
+                return;
+            }
+
+            const isCovered = validCities.some(city => input.includes(city) || city.includes(input));
+            if (isCovered) {
+                resultDiv.className = "mt-3 p-3 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded-xl text-xs font-semibold";
+                resultDiv.innerHTML = "✓ Votre ville fait partie de notre zone de service régulier !";
+            } else {
+                resultDiv.className = "mt-3 p-3 bg-blue-50 text-brand-darkblue border border-blue-200 rounded-xl text-xs font-semibold";
+                resultDiv.innerHTML = "i Nous couvrons souvent les environs ! Appelez le 438-985-5821 pour confirmer.";
+            }
+        }
+
+        // Toggle FAQ
+        function toggleFaq(id) {
+            const ans = document.getElementById(`faq-ans-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            ans.classList.toggle('hidden');
+            icon.style.transform = ans.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+
+        // Soumission du formulaire
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('form-name').value;
+            const phone = document.getElementById('form-phone').value;
+            const city = document.getElementById('form-city').value;
+            const appliance = document.getElementById('form-appliance').value;
+
+            document.getElementById('modal-message').innerHTML = `Merci <strong>${name}</strong> ! Votre demande pour votre <strong>${appliance}</strong> à <strong>${city}</strong> a été transmise.<br><br>Nous vous recontacterons au <strong>${phone}</strong> rapidement.`;
+            document.getElementById('modal-overlay').classList.remove('hidden');
+            document.getElementById('booking-form').reset();
+        }
+
+        function closeModal() {
+            document.getElementById('modal-overlay').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
